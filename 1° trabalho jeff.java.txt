@@ -1,0 +1,206 @@
+﻿1-     public static void main(String[] args) {
+        Scanner ler= new Scanner(System.in);
+        double[]notas=new double[10];
+        int j=0,contador=0;
+        double media=0,maior = 0,menor=10,soma=0;
+        for(int i=0;i<10;i++){
+            System.out.println("Digite as notas");
+            notas[i]=ler.nextDouble();
+            soma+=notas[i];
+            if(notas[i]>maior){
+                maior=notas[i];
+            }
+            if(notas[i]<menor){
+                menor=notas[i];
+            }
+            if (notas[1]>=7) {
+                
+                contador++;
+                
+            }
+            if(notas[i]<7){
+                int k = 0;
+                k++;
+            }
+            media=soma/10;
+            for(int p=0;p<10;p++){
+                if(notas[i]<media){
+                    j++;
+            } }   
+            System.out.println("A MEDIA DA TURMA E: "+media);
+            System.out.println("A MAIOR NOTA E: "+maior);
+            System.out.println("A MENOR NOTA E: "+menor);
+            System.out.println("NOTAS MENORES Q A MEDIA:"+j);
+            System.out.println("NOTAS MAIORES OU IGUAL A 7: "+contador);
+        
+              
+    } }
+}
+2-
+       public static void main(String[] args) {
+        int[][]matriz=new int[4][4];
+        int somaDp=0,somaDs=0;
+        Scanner ler=new Scanner(System.in);
+        System.out.println("DIGITE OS NUMEROS DA MATRIZ: ");
+        
+        for(int i=0;i<4;i++){
+         for(int j=0;j<4;j++){
+            System.out.println("{"+i+"]["+j+"]: ");
+            matriz[i][j]=ler.nextInt();
+            
+    } 
+    }
+        System.out.println("DIAGONAL PRINCIPAL");
+        for(int i=0;i<4;i++){
+            for(int j=0;j<4;j++){
+              if(i==j){
+                  System.out.println(matriz[i][j]+" ");
+                  somaDp+=matriz[i][j];
+              }  
+        }
+        }
+        System.out.println("DIAGONAL SECUNDARIA");
+        for(int i=0;i<4;i++){
+            for(int j=0;j<4;j++){
+                if(j==3-i){
+                    System.out.println(matriz[i][j]+" ");
+                    somaDs+=matriz[i][j];
+                }
+            }
+        }
+        if(somaDp>somaDs){
+            System.out.println("A MAIOR SOMA E A DIAGONAL PRINCIPAL");
+        }else if(somaDp==somaDs){
+            System.out.println("AS DUAS SOMAS SAO IGUAIS");
+        }
+        else{
+            System.out.println("A MAIOR SOMA E A DIAGONAL SEUNDARIA");
+        }
+        
+        System.out.println("SOMA DA DIAGONAL PRINCIPAL:"+somaDp);
+        System.out.println("SOMA DA DIAGONAL SECUNDARIA:"+somaDs);
+}
+}
+3- import java.util.Scanner;
+
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        Scanner entrada = new Scanner(System.in);
+
+
+        int[] vetor = new int[15];
+        int[] vetor2 = new int[15];
+        int cont = 0;
+
+
+        // Lendo os 15 numeros
+        for (int i = 0; i < 15; i++) {
+            System.out.print("Digite um numero: ");
+            vetor[i] = entrada.nextInt();
+        }
+
+
+      
+        for (int i = 0; i < 15; i++) {
+
+
+            int repetiu = 0;
+
+
+            for (int j = 0; j < cont; j++) {
+
+
+                if (vetor[i] == vetor2[j]) {
+                    repetiu = 1;
+                }
+            }
+
+
+            if (repetiu == 0) {
+                vetor2[cont] = vetor[i];
+                cont++;
+            }
+        }
+
+
+       
+        System.out.println("Valores diferentes:");
+
+
+        for (int i = 0; i < cont; i++) {
+            System.out.print(vetor2[i] + " ");
+        }
+
+
+        System.out.println();
+        System.out.println("Quantidade de valores diferentes: " + cont);
+
+
+        entrada.close();
+    }
+}
+4-
+import java.util.Scanner;
+
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        Scanner entrada = new Scanner(System.in);
+
+
+        int[][] matriz = new int[5][5];
+        int[][] rotacionada = new int[5][5];
+
+
+     
+        System.out.println("Digite os valores da matriz:");
+
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                matriz[i][j] = entrada.nextInt();
+            }
+        }
+
+
+       
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                rotacionada[j][4 - i] = matriz[i][j];
+            }
+        }
+
+
+
+
+        System.out.println("Matriz original:");
+
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+
+     
+        System.out.println("Matriz rotacionada:");
+
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(rotacionada[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+
+        entrada.close();
+    }
+}
